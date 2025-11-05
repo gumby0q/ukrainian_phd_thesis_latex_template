@@ -1,0 +1,45 @@
+# Use the Island of TeX's TeX Live image as the base
+FROM registry.gitlab.com/islandoftex/images/texlive:latest
+
+# avoid issues with files permissions
+# https://vsupalov.com/docker-shared-permissions/
+ARG USER_ID
+ARG GROUP_ID
+
+# for ubuntu >>
+# RUN addgroup --gid $GROUP_ID mygroup
+# RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID myuser
+# for ubuntu <<
+
+#for alpine? >>
+RUN groupadd --gid $GROUP_ID mygroup
+RUN useradd --uid 1000 --gid $GROUP_ID --shell /bin/bash --create-home myuser
+# Set the password to an invalid value, effectively disabling it
+RUN passwd -d myuser
+#for alpine? <<
+
+
+USER myuser
+
+
+# Set the working directory in the container
+WORKDIR /usr/local/share/fonts
+
+# Copy your font files from your host to the container
+COPY fonts/*.ttf ./
+# COPY path/to/your/fonts/*.otf ./
+
+# Update font cache (optional, might be needed for some system fonts to be recognized)
+RUN fc-cache -fv
+
+RUN mtxrun --generate && \
+      texlua /usr/bin/mtxrun.lua --luatex --generate && \
+      context --make && \
+      context --luatex --make;
+
+# Pre-generate the LuaTeX font names database
+RUN luaotfload-tool --update
+
+
+# Set the working directory back to the home directory
+WORKDIR /workdir

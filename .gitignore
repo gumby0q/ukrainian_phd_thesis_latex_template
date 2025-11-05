@@ -1,0 +1,14 @@
+# vakthesis
+# *.pdf
+
+*.aux
+*.log 
+*.blg 
+*.toc
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.bcf
+*.bbl
+*.out
+pdfa.xmpi

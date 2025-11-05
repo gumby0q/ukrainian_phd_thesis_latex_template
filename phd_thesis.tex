@@ -1,0 +1,342 @@
+
+%% Приклад головного файла дисертації (для mon2017dev.cls)
+
+% Це просто файл-приклад, який дисертантки і дисертанти можуть використати
+% як основу для своєї дисертації.
+% Але в цьому базовому вигляді він може не підходити для всіх дисертацій.
+% Треба наповнити його конкретним змістом,
+% а також зробити певні налаштування згідно зі своїми потребами:
+% вибрати потрібні опції класу,
+% підключити корисні додаткові пакунки,
+% налаштувати параметри сторінки (зокрема розміри берегів),
+% означити специфічні команди, які використовуються в дисертації, тощо.
+
+\documentclass[
+  type=phd,% тип дисертації
+    %%%%%% Ступені згідно з Порядком присудження наукових ступенів (Постанова КМ)
+    % c    кандидат <галузь науки> (типово)
+    % d    доктор <галузь науки>
+    %%%%%% Ступені згідно із Законом України «Про вищу освіту»
+    % phd  доктор філософії
+    % artd доктор мистецтва
+    % scd  доктор наук
+  % instnameorder=asc,% порядок розміщення на титульному аркуші
+                      % назви установи і назви органу, до сфери управління якого належить установа
+    % desc низхідний (типово)
+    % asc  висхідний
+    % ascd висхідний порядок з відмінюванням
+  % guide=mon2017dev.naiau,% модуль для підтримки специфічних вимог
+    % karazin Харківський національний університет імені В. Н. Каразіна
+    %         -- галузь науки для типу дисертації c і d
+    %         -- дрібні зміни в оформленні
+    % knu     Київський національний університет імені Тараса Шевченка
+    %         -- повтор однакових установ двічі
+    % naiau   Національна академія внутрішніх справ
+    %         -- лапки, тире точно, як у зразку з наказу МОН
+    %         -- дрібні зміни в оформленні
+    % --------------------------------------------------------------------------
+    % kivi    у стилі Киви
+    %         -- дисертація за здоров'я наукового рівня
+    %            dissertation to the health of the science level
+]{mon2017dev}[2021/07/21]
+
+% Налагодження кодування шрифта, кодування вхідного файла
+% та вибір необхідних мов
+% \usepackage[T2A]{fontenc}
+% \usepackage[T2A]{fontenc}
+
+% Для шрифтів T1 треба встановити cm-super
+% \usepackage[T1, T2A]{fontenc}
+\usepackage[T1]{fontenc}
+% \usepackage[T2A]{fontenc}
+
+% \setsansfont{YourSansCyrillicFont}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% \setmainfont{Noto Serif}
+% \setmainfont{Times New Roman}[
+%     SmallCapsFont = {Times New Roman}
+% ]
+% \setmainfont{Times New Roman}[
+%     SmallCapsFont = {Noto Serif}
+% ]
+\usepackage{graphicx}
+
+% \usepackage[cp1251]{inputenc}
+\usepackage[utf8]{inputenc}
+% TODO: Перевірити, якщо головна мова документа -- english.
+% Ще не всі службові слова перекладено (тільки ті, що використовуються в анотації).
+% Не рекомендовано використовувати для документів,
+% у яких головна мова -- не ukrainian (а english чи інша).
+\usepackage[russian,english,ukrainian]{babel}
+
+% bibliography things -------------------------------------------------------------->>>>
+% \usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex} % numeric-comp - vancouver style -> only that works somehow
+% \usepackage[backend=biber, style=ieee, sorting=none]{biblatex}
+\usepackage[backend=biber, style=ieee, sorting=none, autolang=other]{biblatex} % numeric-comp - vancouver style
+
+% bibliography formating in other than default language:
+% in  \usepackage[backend=biber, style=ieee, sorting=none, autolang=other]{biblatex} add !!!autolang=other!!!
+% ensure that this language is in the document
+% in .bib add the field to needed item
+% langid       = {english}
+
+% sorting https://tex.stackexchange.com/a/51439
+% Define the formatting for citation numbers
+\DeclareFieldFormat{labelnumberwidth}{{#1. }}
+% \usepackage[backend=biber, style=apa]{biblatex}
+% \usepackage[backend=biber, style=ieee]{biblatex}
+% \usepackage[backend=biber, style=mla]{biblatex}
+\addbibresource{abstract_references.bib}
+\addbibresource{chapter_1_references.bib}
+\addbibresource{chapter_2_references.bib}
+\addbibresource{chapter_3_references.bib}
+\addbibresource{chapter_4_references.bib}
+% bibliography things --------------------------------------------------------------<<<<
+
+% Підключення необхідних пакетів. Наприклад,
+% Пакети AMS для підтримки математики, теорем, спеціальних шрифтів
+\usepackage[intlimits]{amsmath}
+\allowdisplaybreaks
+\usepackage{amsthm}
+\usepackage{amssymb}
+% Налагодження нумерованих списків
+\usepackage{enumerate}
+% Гіпертекстові документи
+%\usepackage{hyperref}
+% або лише спеціальне форматування URL
+%\usepackage{url}
+% У списку літератури зворотні вказівки на посилання
+%\usepackage{backref}
+% Сортування посилань
+%\usepackage[noadjust]{cite}
+% Останні два пакети несумісні між собою. Крім того, конфліктують з цим класом!
+% Таблиці зі стовпчиками, що розтягуються
+\usepackage{tabularx}
+% Включення факсимільних підписів і взагалі робота з ілюстраціями, кольором тощо
+% \usepackage{graphicx}
+
+% ---------------------------------------------------------------------------------->>>>
+% Для вимоги оприлюднює … на своєму офіційному веб-сайті електронну копію дисертації у форматі PDF/A
+\usepackage{pdfx}
+% ----------------------------------------------------------------------------------<<<<
+\usepackage{multirow}
+\usepackage{longtable}
+
+\usepackage{pdflscape} % for landscape
+% ----------------------------------------------------------------------------------<<<<
+
+
+% Налагодження параметрів сторінки (зокрема берегів).
+% Наприклад, за допомогою пакета geometry
+% УВАГА!
+% Параметри сторінки не зафіксовані жорстко вимогами до оформлення дисертацій
+% і можуть за потреби дещо змінюватися.
+% Це просто приклад.
+% Варто встановити свої параметри залежно від особливостей тексту дисертації
+% чи технічних особливостей майстерні, яка робитиме оправу.
+\usepackage{geometry}
+\geometry{hmargin={30mm,15mm},lines=29,vcentering}
+
+% Означення теорем (теоремоподібних структур)
+% Класичний варіант: для кожної теореми свій лічильник,
+% тобто теорема 1.1, лема 1.1, теорема 1.2
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{lemma}{Лема}[chapter]
+\newtheorem{corollary}{Наслідок}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Означення}[chapter]
+\newtheorem{example}{Приклад}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}{Зауваження}[chapter]
+% Цікавий варіант: всі теореми нумеруються одним лічильником,
+% тобто теорема 1.1, лема 1.2, теорема 1.3
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Теорема}[chapter]
+%\newtheorem{lemma}[theorem]{Лема}
+%\newtheorem{corollary}[theorem]{Наслідок}
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Означення}
+%\newtheorem{example}[theorem]{Приклад}
+%\theoremstyle{remark}
+%\newtheorem{remark}[theorem]{Зауваження}
+
+% Локальні означення
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\Q}{\mathbb{Q}}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\set}[1]{\left\{#1\right\}}
+% \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+% \newcommand{\norm}[2][]{\left\lVert#2\right\rVert_{#1}}
+% Це потрібно для скороченого запису ряду Остроградського
+% \newcommand{\Osign}[1]{\mathrm{O}^{#1}}
+
+% Якщо потрібно працювати лише з деякими розділами
+%\includeonly{xampl-ch1,xampl-bib}
+
+% Інформація про використані пакети тощо.
+% Може знадобитися для відлагодження класу документа
+%\listfiles
+
+
+% Text wrapping fixes 
+% https://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Hyphenation
+% \pretolerance=150
+% https://texfaq.org/FAQ-overfull.html
+\setlength{\emergencystretch}{3em}
+
+
+\begin{document}
+
+% Назва дисертації
+% \title(uk){Система вихрострумового вимірювання приповерхневих радіальних профілів електрофізичних характеристик циліндричних об'єк\discretionary{}{}{}тів}
+\title(uk){Система вихрострумового вимірювання приповерхневих радіальних профілів електрофізичних характеристик циліндричних об'єктів}
+% \title(uk){Система вихрострумового вимірювання приповерхневих \hyphenation{ра-ді-аль-них про-фі-лів еле-ктро-фі-зи-чних ха-ра-кте-ри-стик ци-лін-дри-чних об’єк-тів}}
+
+\title(en){System of eddy current measurement of subsurface radial profiles of electrophysical characteristics of cylindrical objects}
+
+% Прізвище, ім'я, по батькові здобувача
+\author(uk){Сторчак Анатолій Вячеславович}
+\author(en){Storchak Anatolii Viacheslavovych}
+
+% Факсимільний підпис автора у файлі sorokina-sig.pdf, .eps, .jpeg тощо
+% (зсув по x, зсув по y)
+% [параметри команди \includegraphics]
+% \facsimilesig{author}(-60,-12)[width=70pt]{sorokina-sig}
+
+% Прізвище, ім'я, по батькові наукового керівника/консультанта
+\supervisor(uk){Гальченко Володимир Якович}
+% Науковий ступінь, вчене звання наукового керівника/консультанта
+               {доктор технічних наук, професор}
+% Установа, де працює науковий керівник/консультант, і посада
+               {Черкаський державний технологічний університет,
+               професор кафедри приладобудування, мехатроніки та комп'ютеризованих технологій}
+% \supervisor(en){Redko Valeriy Hryhorovych}
+%                {candidate of pedagogical sciences, associate professor}
+%                {}
+% \supervisor(uk){Альфа Бета Гамма}
+%                {доктор фізико-математичних наук, професор}
+%                {}
+% \supervisor(en){Alpha Beta Gamma}
+%                {doctor of physical and mathematical sciences, professor}
+%                {}
+
+% Спеціальність
+% Якщо код спеціальності присутній у CSV-файлі, то клас читає інформацію з нього.
+% Потрібний CSV-файл вибирається залежно від типу дисертації та основної мови документа.
+% За потреби можна підключити інший CSV-файл з шифрами і назвами спеціальностей
+% або у факультативному аргументі команди задати всі дані.
+% Для типу дисертації c або d
+% можна використовувати обидві команди \specialitysci і \specialityedu одночасно,
+% щоб отримати наче «змішаний» ступінь:
+% тоді на титульному аркуші й в анотації
+% буде написано шифри й назви спеціальностей за обома переліками,
+% а для типу дисертації c ще й ступінь у вигляді
+% «кандидата ... наук (доктора філософії)»
+
+% Варіант для дисертацій на здобуття наукового ступеня кандидата чи доктора ... наук
+% (згідно з Переліком наукових спеціальностей)
+% Цю команду треба використовувати для типу дисертації c або d.
+% \specialitysci(uk)[
+%   % specialityname=Теорія і методика професійної освіти,% спеціальність
+%   % degreefield=педагогічні,                            % галузь науки, за якою присуджується науковий ступінь
+%   % specialityfile=<filename>.csv
+% ]{13.00.04}                                             % шифр спеціальності
+% \specialitysci(en)[
+%   % specialityname=Theory and methodology of professional education,
+%   % degreefield=pedagogical,
+%   % specialityfile=<filename>.csv
+% ]{13.00.04}
+
+% Варіант для дисертацій на здобуття наукового ступеня доктора філософії, доктора мистецтва чи доктора наук
+% (згідно з Переліком галузей знань і спеціальностей, за якими здійснюється підготовка здобувачів вищої освіти
+% Цю команду треба використовувати для типу дисертації phd, artd або scd,
+% але також можна для типу дисертації c або d разом з командою \specialitysci.
+\specialityedu(uk)[
+  specialityname=Метрологія та інформаційно-вимірювальна техніка,% найменування спеціальності
+  % fieldcode=01,                   % шифр галузі
+  % fieldname=Metrology,    % галузь знань
+  % specialityfile=<filename>.csv
+]{152}                              % код спеціальності
+\specialityedu(en)[
+  specialityname=Metrology and information-measuring technique,
+  % fieldcode=01,
+  % fieldname=Metrology,
+  % specialityfile=<filename>.csv
+]{152}
+
+% Звичайно, доступна команда \speciality, як у попередніх версіях.
+% Клас означує її як одну з команд \specialitysci чи \specialityedu
+% залежно від типу дисертації.
+% Тому можна використовувати її у такій формі, наприклад:
+% \speciality(uk)[degreefield={фізико"=математичні}]{01.01.01}
+% \speciality(en){01.01.01}
+
+% Індекс за УДК
+\udc{620.179.147:519.853.6}
+
+% Установа, де виконана робота, і місто
+\institution(uk)[
+  altname=Черкаський державний технологічний університет% альтернативна назва установи (пишеться в анотації в описі дисертації)
+% ]{Черкаський державний технологічний університет}
+]{}
+ {Черкаси}
+\institution(en)[
+  altname=Cherkasy State Technological University
+% ]{Cherkasy State Technological University}
+]{}
+ {Cherkasy}
+
+% Команду \council переписано в стилі команди \institution:
+% ключ institution задає «стандартну» назву установи, у спеціалізованій вченій раді якої проводиться захист дисертації
+% (з вказуванням назви органу, до сфери управління якого належить заклад, установа),
+% а ключ altname — «альтернативну» (тобто скорочену, для анотації).
+% Якщо факультативний аргумент відсутній, то клас вважає,
+% що захист проводиться в тій самій установі, де здійснювалася підготовка здобувача,
+% а отже, немає потреби писати назву цієї установи двічі на титульному і в анотації.
+% Але за потреби можна вручну повторити тут назву установи, і буде повтор на титульному і в анотації.
+\council(uk)[
+  institution={Черкаський державний технологічний університет,
+    Міністерство освіти і науки України},
+  altname=Черкаський державний технологічний університет,
+  address={18006, м.~Черкаси, б-р~Шевченка, 460},
+  % town=Київ
+]{Д~26.053.01}
+\council(en)[
+  institution={Cherkasy State Technological University,
+    Ministry of Education and Science of Ukraine},
+  altname=Cherkasy State Technological University,
+  % town=Kyiv
+]{D~26.053.01}
+
+% Рік, коли написана дисертація
+\date{2024}
+
+% \secret{Таємно}
+
+% Тут буде титульний аркуш
+\maketitle
+
+% Анотація
+\include{abstract}
+
+% Зміст
+\tableofcontents
+
+% Розділи дисертації в окремих файлах
+\include{acronym_list}% Вступ
+\include{introduction}% Вступ
+\include{chapter_1}%        Розділ 1
+\include{chapter_2}%        Розділ 2
+\include{chapter_3}%        Розділ 3
+\include{chapter_4}%        Розділ 4
+\include{conclusion}%       Висновки
+
+\appendix
+\include{appnote_1}%  Додаток 1 (список публікацій та відомості про апробацію)
+\include{appnote_2}%  Додаток 2 (акти впровадження)
+%\include{xampl-app2}%      Додаток 2 і т. д. ще скільки потрібно додатків
+
+\end{document}

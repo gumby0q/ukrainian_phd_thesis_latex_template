@@ -1,0 +1,87 @@
+%% mon2017dev-abs.tex  Приклад анотації (для mon2017dev.tex)
+
+\begin{abstract}[
+  language=ukrainian,% мова анотації
+  % chapter=Реферат, % заголовок розділу або false, щоб не робити заголовок (типово Анотація/Abstract)
+  % header=false     % автоматична генерація опису дисертації (типово true)
+]
+
+В дисертаційній роботі було розв’язано задачу щодо вимірювання приповерхневих радіальних профілів електрофізичних характеристик циліндричних об’єктів та описано процес створення такої системи вимірювання на основі реалізованої сурогатної моделі процесу вихрострумового контролю...
+
+
+  \keywords{%
+    вихрострумове вимірювання, 
+    моніторинг,
+    циліндричний об’єкт контролю, 
+    радіальні профілі магнітної проникності і електричної провідності, 
+    сурогатна модель, 
+    нейромережа, 
+    однорідний комп’ютерний план експерименту,
+    ...
+  }
+\end{abstract}
+
+\begin{abstract}[
+  language=english,
+  % chapter=Summary,
+  % header=false
+]
+  
+
+The dissertation solves the problem of measuring the subsurface radial profiles of the electrophysical properties of cylindrical objects and describes the process of creating such a measurement system based on the implemented surrogate model of the eddy current testing process...
+
+  \keywords{%
+    eddy current measurement, 
+    monitoring,
+    cylindrical test object, 
+    radial profiles of magnetic permeability and electrical conductivity, 
+    surrogate model, 
+    neural network,
+    uniform computer design of experiment,
+    ...
+  }
+\end{abstract}
+
+
+\begin{refsection}
+\nocite{
+  my_halchenko2019nonlinear,
+  my_halchenko2020restoration,
+  my_halchenko2020construction,
+  my_halchenko2020surrogate,
+  my_halchenko2022measurement,
+  my_trembovetska2020linear,
+  my_halchenko2020methods,
+  my_trembovetska2019accuracy,
+  my_storchak2017eddy,
+  my_storchak2018neural,
+  my_storchak2018mathematical,
+  my_galchenko2019surrogate,
+}
+
+
+% {\Large \textbf{Custom Heading Without Section}}\par
+\vspace{1em}
+\centering
+{ \textbf{Список публікацій здобувача за~темою~дисертації}}\par
+% Add some vertical space after the custom heading
+\vspace{1em}
+
+\printbibliography[heading=none]
+% \printbibliography[title={Список публікацій здобувача за~темою~дисертації}]
+\end{refsection}
+
+
+% \nocite{Bar98fasp1,Bar98fasp2,PrB01umc}
+
+% \begin{bibset}% [a]
+%   {Список публікацій здобувача за~темою~дисертації}
+%   % {Список публікацій здобувача}
+%   \bibliographystyle{gost2008}
+%   %
+%   % Якщо не треба нумерація з крапкою, можна закоментувати наступні три рядки.
+%   \makeatletter
+%   \renewcommand\@biblabel[1]{#1.}
+%   \makeatother
+%   \bibliography{xampl-mybib}
+% \end{bibset}

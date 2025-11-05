@@ -1,0 +1,206 @@
+
+\begin{refsection}
+
+% Приклад назви розділу і мітки, на яку можна посилатися в тексті
+\chapter{Метод вимірювання профілів електрофізичних параметрів матеріалу циліндричних об’єктів з апріорним накопиченням даних}
+\label{ch:chapter_2}
+\section{Концептуальна постановка задачі}
+% Приклад назви підрозділу
+
+Визначення приповерхневих радіальних профілів електрофізичних характеристик...
+
+
+\section{“Точна” електродинамічна модель процесу вимірювання вихрострумовим перетворювачем електрофізичних параметрів циліндричних об’єктів контролю}
+\label{ch:chapter_2:sec:precize_analytic_model}
+
+Математична модель складалася на основі загальних законів теорії електромагнітного поля Максвелла та описує процес контролю прохідним круговим ВСП циліндричного співвісного ОК. Є відомими аналітичні моделі процесу вихрострумового контролю циліндричних ОК \cite{koliskina2013analytical, kolyshkin1994analytical}, але внаслідок універсальності має сенс використовувати модель Dodd-Deeds \cite{nestor1979analysis}. Для спрощення представлення профілів розподілу електрофізичних параметрів у її контексті, пропонується використовувати кусково-постійну апроксимацію, коли ОК вважається умовно багатошаровим та електрофізичні параметри в кожному n-му шарі із його $(K–1)$ шарів приймаються сталими: $\sigma_n=\sigma(r)$, $\mu_n=\mu(r)$, де $n=1,2,\ldots,(K-1)$ рис.~\ref{fig:ch2:model_with_rod_layers}.
+
+\begin{figure}[h]
+    \setlength{\unitlength}{1mm}
+    \begin{center}
+    \includegraphics[width=0.75\linewidth]{{ch2_images/model_with_rod_layers.jpg}}
+    \caption{Геометрична модель прохідного ВСП з циліндричним ОК: $r_{d1}$, $r_{d2}$ "--- внутрішній та зовнішній радіуси котушки збудження відповідно; $r_n$ "--- зовнішній радіус $n$-го шару; $l_{d1}$, $l_{d2}$ "--- відстані до граней котушки збудження, $r_s$ "--- радіус вимірювального витка, $l_s$ "--- відстань до вимірювального витка.}
+    \label{fig:ch2:model_with_rod_layers}
+    \end{center}
+\end{figure} 
+
+
+Для коректного опису математичної моделі введено поняття регіону. Кожен регіон у циліндричній системі координат може бути описаний системою таких нерівностей:
+
+\begin{equation*}
+    \begin{aligned}
+    {R_1} &= \left\{ \right.0 \le r \le r_1,\, 0 \le {\varphi } \le 2 \pi,\, -\infty < z < \infty \left.\right\} \\ 
+    & \quad \quad \quad \quad \quad \quad \quad \quad \quad \vdots \\
+    {R_i} &= \left\{ \right. {r_{i - 1}} \le r \le {r_i},\;0 \le {\varphi } \le 2{{\pi }},\; - \infty  < z < \infty \left.\right\}\\
+    & \quad \quad \quad \quad \quad \quad \quad \quad \quad \vdots \\
+    {R_N} &= \left\{ \right. {r_{N - 1}} < r,\;0 \le {{\varphi }} \le 2{{\pi }},\; - \infty  < z < \infty \left.\right\},
+\end{aligned}
+\end{equation*}
+
+де $i = 2,3,...,(N - 1)$, а $N$ "--- загальна кількість регіонів, ${r_{N - 1}} = {r_d}$. 
+
+Математична модель складалася при прийнятті таких припущень \cite{nestor1979analysis}: середовища є лінійними, ізотропними та однорідними; струм збудження I є синусоїдальним, що змінюється з кутовою частотою $\omega$. Котушка збудження на початковому етапі розглядається як нескінченно тонкий виток з радіусом $r_d$. Також приймається, що осі ВСП та циліндричного ОК співпадають. 
+Густина струму збудження та векторний потенціал у циліндричній системі координат за таких умов мають тільки азимутальну складову:
+
+\begin{equation}
+    \vec A\left( {r,\;{{\varphi }},\;z} \right) = A\left( {r,\;z} \right){\vec e_{{\varphi }}}, \, \vec J\left( {r,\;{{\varphi }},\;z} \right) = J\left( {r,\;z} \right){\vec e_{{\varphi }}}.
+\end{equation}
+
+Диференціальні рівняння для векторного потенціалу в регіонах із номерами $(N-1)$ та $N$ можна записати у вигляді:
+
+\[{R_{N - 1}} \cup {R_N}:\;\quad \frac{{{\partial ^2}A}}{{\partial {r^2}}} + \frac{1}{r}\frac{{\partial A}}{{\partial r}} - \frac{A}{{{r^2}}} + \frac{{{\partial ^2}A}}{{\partial {z^2}}} = 0\]
+
+а в регіонах ${R_1},{R_2},...,{R_{N - 2}}$ відповідно:
+
+\begin{equation*}
+\frac{{{\partial ^2}{A^{(i)}}}}{{\partial {r^2}}} + \frac{1}{r}\frac{{\partial {A^{(i)}}}}{{\partial r}} - \frac{{{A^{(i)}}}}{{{r^2}}} + \frac{{{\partial ^2}{A^{(i)}}}}{{\partial {z^2}}} = j{{\omega }}{{{\mu }}_i}{{{\sigma }}_i}{A^{(i)}},
+\end{equation*}
+
+де $i = 1,2,...,(N - 2)$, $\mu_i$ "--- абсолютна магнітна проникність, $j = \sqrt { - 1}$.
+
+Враховуючи, що для векторного потенціалу з фізичних міркувань виконуються такі умови: а) $A$ є скінченним при $r=0$, б) $A \rightarrow 0$ при $r \rightarrow \infty$, та беручи до уваги граничні умови:
+
+\begin{equation*}
+\begin{aligned}
+{\left. {{A^{(i)}}\left( {r,\;z} \right)} \right|_{r = {r_i}}} &= {\left. {{A^{(i + 1)}}\left( {r,\;z} \right)} \right|_{r = {r_i}}},\\
+{\left. {\frac{1}{{{{{\mu }}_i}}}\frac{{\partial {A^{(i)}}}}{{\partial r}}\left( {r,z} \right)} \right|_{r = {r_i}}} &= {\left. {\frac{1}{{{{{\mu }}_{i + 1}}}}\frac{{\partial {A^{(i + 1)}}}}{{\partial r}}\left( {r,z} \right)} \right|_{r = {r_i}}},
+\end{aligned}
+\end{equation*}
+
+де $i = 1,2,...,(N - 2)$
+
+\begin{equation*}
+\begin{aligned}
+    {\left. {{A^{(N - 1)}}\left( {r,\;z} \right)} \right|_{r = {r_{N - 1}}}} &= {\left. {{A^{(N)}}\left( {r,\;z} \right)} \right|_{r = {r_{N - 1}}}}, \\
+    {\left. {\frac{1}{{{{{\mu }}_{N - 1}}}}\frac{{\partial {A^{(N - 1)}}}}{{\partial r}}\left( {r,z} \right)} \right|_{r = {r_{N - 1}}}} &= {\left. {\frac{1}{{{{{\mu }}_N}}}\frac{{\partial {A^{(N)}}}}{{\partial r}} \left( {r,z} \right)} \right|_{r = {r_{N - 1}}}} + I{{\delta }}\left( {r - {r_d}} \right){{\delta }}\left( {z - {z_d}} \right),
+\end{aligned}
+\end{equation*}
+
+де $\delta$ "--- дельта-функція Дірака, отримано рівняння для векторного потенціалу в будь-якому регіоні всередині витка зі струмом, що має такий вигляд:
+
+\begin{equation}
+\begin{aligned}
+    A\left( {r,z,{r_d},{z_d}} \right) &= \frac{{I{{{\mu }}_0}{r_d}}}{{{\pi }}}\mathop \int_{0}^{\infty} \frac{{Q1\,Q2}}{{{U_{22}}{V_{11}} - {U_{12}}{V_{21}}}}\cos \left( {{{\alpha }}(z - {z_d})} \right) \, d{{\alpha }},\\
+    Q1 &= {V_{11}}{I_1}\left( {{{{\alpha }}_n}r} \right) + {V_{21}}{K_1}\left( {{{{\alpha }}_n}r} \right),\\
+    Q2 &= {U_{12}}{I_1}\left( {{{\alpha }}{r_d}} \right) + {U_{22}}{K_1}\left( {{{\alpha }}{r_d}} \right),
+\end{aligned}    
+\end{equation}
+
+де ${{{\mu }}_0} = 4{{\pi }} \cdot {10^{ - 7}}$ Гн/м "--- магнітна стала;
+
+\begin{equation*}
+\begin{aligned}
+    {V_{11}}\left( {n + 1,n} \right) &= \left( {{K_0}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right){I_1}\left( {{{{\alpha }}_n}{r_n}} \right) + \frac{{{{{\beta }}_n}}}{{{{{\beta }}_{n + 1}}}}{I_0}\left( {{{{\alpha }}_n}{r_n}} \right){K_1}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right)} \right){{{\alpha }}_{n + 1}}{r_n};\\
+    {U_{12}}\left( {n + 1,n} \right) &= \bigg( {K_0}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right){K_1}\left( {{{{\alpha }}_n}{r_n}} \right) \\ & \left.- \frac{{{{{\beta }}_n}}}{{{{{\beta }}_{n + 1}}}}{K_0}\left( {{{{\alpha }}_n}{r_n}} \right){K_1}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right) \right){{{\alpha }}_{n + 1}}{r_n};\\
+    {V_{21}}\left( {n + 1,n} \right) &= \left( {{I_0}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right){I_1}\left( {{{{\alpha }}_n}{r_n}} \right) - \frac{{{{{\beta }}_n}}}{{{{{\beta }}_{n + 1}}}}{I_0}\left( {{{{\alpha }}_n}{r_n}} \right){I_1}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right)} \right){{{\alpha }}_{n + 1}}{r_n};\\
+    {U_{22}}\left( {n + 1,n} \right) &= \left( {{I_0}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right){K_1}\left( {{{{\alpha }}_n}{r_n}} \right) + \frac{{{{{\beta }}_n}}}{{{{{\beta }}_{n + 1}}}}{K_0}\left( {{{{\alpha }}_n}{r_n}} \right){I_1}\left( {{{{\alpha }}_{n + 1}}{r_n}} \right)} \right){{{\alpha }}_{n + 1}}{r_n};\\
+    {{{\beta }}_n} &= \left( {\frac{{{{{\mu }}_0}}}{{{{{\mu }}_n}}}} \right){{{\alpha }}_n};
+\end{aligned}    
+\end{equation*}
+
+${I_0},{I_1}$ "--- модифіковані функції Бесселя першого роду нульового та першого порядків від комплексного аргументу;
+
+${K_0},{K_1}$ "--- модифіковані функції Бесселя другого роду нульового та першого порядків від комплексного аргументу;
+
+${{{\alpha }}_n} = \;\sqrt {{{{\alpha }}^2} - j{{{\mu }}_n}{{{\sigma }}_n}{{\;}}}$, $n = 1,2,...,K$.
+
+Векторний потенціал в області в середині котушки збудження, яка має прямокутний поперечний переріз та однорідний розподіл густини струму збудження, можна записати у вигляді:
+
+\begin{equation}
+    A\left( {r,z} \right) = I{N_d}\int_{{l_{d1}}}^{{l_{d2}}} {\int_{{r_{d1}}}^{{r_{d2}}} {A\left( {r,z,{r_d},{z_d}} \right) \,d{r_d} \,d{z_d}} }
+\end{equation}
+
+де ${N_d} = \frac{W}{{\left( {{r_{d2}} - {r_{d1}}} \right)\left( {{l_{d2}} - {l_{d1}}} \right)}}$; $W$ "--- кількість витків котушки збудження.
+
+Зміною порядку інтегрування та в результаті його виконання отримано вираз для векторного потенціалу:
+
+\begin{equation} \label{eq:vecpot_1}
+\begin{aligned}
+    A\left( {r,z} \right) &= \frac{{I{N_d}{{{\mu }}_0}{r_d}}}{{{\pi }}} \int_0^\infty  \frac{{Q1\,\,Q2}}{{{{{\alpha }}^3}\left( {{U_{22}}{V_{11}} - {U_{12}}{V_{21}}} \right)}}Q3 \, d{{\alpha }},\\
+    Q1 &= \sin \left( {{{\alpha }}(z - {l_{d1}})} \right) - \sin \left( {{{\alpha }}(z - {l_{d2}})} \right),\\
+    Q2 &= {V_{11}}{I_1}\left( {{{{\alpha }}_n}r} \right) + {V_{21}}{K_1}\left( {{{{\alpha }}_n}r} \right),\\
+    Q3 &= {U_{12}}I\left( {{r_{d2}},{r_{d1}}} \right) + {U_{22}}K\left( {{r_{d2}},{r_{d1}}} \right),
+\end{aligned}
+\end{equation}
+
+де $I\left( {{r_{d2}},{r_{d1}}} \right) = \int_{\alpha {r_{d1}}}^{\alpha {r_{d2}}} t{I_1}\left( {{{\alpha }}t} \right) \,dt$;
+
+$K\left( {{r_{d2}},{r_{d1}}} \right) = \int_{\alpha {r_{d1}}}^{\alpha {r_{d2}}} t{K_1}\left( {{{\alpha }}t} \right) \,dt$.
+
+Наведена в круговому вимірювальному витку напруга з урахуванням \eqref{eq:vecpot_1} обчислюється відповідно до співвідношення:
+
+\begin{equation} \label{eq:voltage_1}
+    E = j\omega\oint_{l_{s-coil}} \vec{A} \,dl=j\omega2\pi r_{s}A(r_s,z_s).
+\end{equation}
+
+Таким чином, задаючи обране радіальне розподілення параметрів матеріалу ОК, модель дозволяє отримати необхідний відгук у вигляді напруги в комплексній формі, а це в свою чергу робить її перспективною до використання в даному дисертаційному дослідженні.
+
+\section{Створення сурогатної моделі процесу контролю з апріорним накопиченням інформації}
+
+В оглядовому розділі було зроблено...
+
+В \cite{uzal1992theory} було запропоновано базові функції апроксимації розподілення параметрів і наведено приклад детальної апроксимації приповерхневої зони товщиною 1мм 50-ма умовними шарами. Для дисертаційного дослідження було обрано чотири типи таких функцій, які подано в табл.~\ref{tab:profiles_approximation} \cite{uzal1992theory,koliskina2013analytical}. На практиці профілі електрофізичних характеристик, які вважатимемо “нормою”, тобто взірцем, що отриманий внаслідок коректної технологічної поверхневої обробки ОК одним із відомих способів, можуть бути визначені експериментально.
+
+\begin{table}[h]
+% \begin{table}[htbp]
+% \begin{table}[h]
+    \caption{Апроксимаційні функції профілів розподілу електрофізичних параметрів}
+    \label{tab:profiles_approximation}
+    % some tips https://stackoverflow.com/questions/3068555/how-to-insert-manual-line-breaks-inside-latex-tables
+    % \begin{tabularx}{\textwidth}{p{3cm}|X|c|c|c|}
+    \begin{tabularx}{\textwidth}{|X|c|c|c|}
+    \hline
+    Вид \newline апроксимації & Апроксимаційна модель & Графічне зображення \\
+    \hline
+    Гаусіан &  
+        $\begin{array}{@{}c@{}}
+        \sigma (r) = {\sigma _1} + ({\sigma _2} - {\sigma _1}){e^{\frac{ - {r^2}}{g^2}}} \\
+        \mu (r) = {{{\mu }}_1} + ({{{\mu }}_2} - {{{\mu }}_1}){e^{\frac{ - {r^2}}{g^2}}}
+        \end{array}$
+    &   \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=4.5cm, height=3.2cm]{ch2_images/distribution_gausian.png}
+        \end{minipage} \\
+    \hline
+    гіперболічний тангенс & 
+        $\begin{array}{@{}c@{}}
+            \sigma(r) = {{{\sigma }}_1} + \frac{{{{{\sigma }}_2} - {{{\sigma }}_1}}}{2}\left( {1 + \tanh \frac{{r + c}}{{2a}}} \right)\\
+            \mu (r) = {{{\mu }}_1} + \frac{{{{{\mu }}_2} - {{{\mu }}_1}}}{2}\left( {1 + \tanh \frac{{r + c}}{{2a}}} \right)
+        \end{array}$
+    &   \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=4.5cm, height=3.2cm]{ch2_images/distribution_tanhiperbolic.png}
+        \end{minipage} \\
+    \hline
+    експоненціальна функція &
+        $\begin{array}{@{}c@{}}
+            {{\sigma }}(r) = {{{\sigma }}_1} + ({{{\sigma }}_2} - {{{\sigma }}_1}){e^{\frac{r}{b}}} \\
+            {{\mu }}(r) = {{{\mu }}_1} + ({{{\mu }}_2} - {{{\mu }}_1}){e^{\frac{r}{b}}}
+        \end{array}$
+    &   \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=4.5cm, height=3.2cm]{ch2_images/distribution_exponentialeasein.png}
+        \end{minipage} \\
+    \hline
+    степенева \newline функція &
+        $\begin{array}{@{}c@{}}
+            {{\sigma }}(r) = {{{\sigma }}_1} + ({{{\sigma }}_2} - {{{\sigma }}_1}){r^{ - 2}} \\
+            {{\mu }}(r) = {{{\mu }}_1} + ({{{\mu }}_2} - {{{\mu }}_1}){r^{ - 2}}
+        \end{array}$
+    &   \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=4.5cm, height=3.2cm]{ch2_images/distribution_quadeasein.png}
+        \end{minipage} \\
+    \hline
+    \end{tabularx}
+\end{table}
+
+
+У табл.~\ref{tab:profiles_approximation} $\sigma_1$, $\mu_1$; $\sigma_2$, $\mu_2$ "--- початкові та кінцеві значення відповідних параметрів зони апроксимації; $a$, $b$, $c$, $g$, $r$ "--- параметри, що задають вигляд апроксимаційної моделі.
+
+\section{Висновки до розділу~\ref{ch:chapter_2}}
+
+В цьому розділі в рамках створення експрес-методу запропоновано...
+
+\section{Список використаних джерел до розділу ~\ref{ch:chapter_2}}
+% \chapter*{Список використаних джерел до розділу ~\ref{ch:review}}
+% \printbibliography[title={Reference List for Section 1}]
+\printbibliography[heading=none]
+\end{refsection}
+
