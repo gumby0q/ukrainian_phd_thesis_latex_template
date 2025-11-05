@@ -38,7 +38,7 @@ https://www.imath.kiev.ua/~baranovskyi/tex/vakthesis/support/mon2017dev/
 
 **Варіант А: Клонування з submodules одразу**
 ```sh
-git clone --recurse-submodules git@github.com:gumby0q/phd_thesis_template.git
+git clone --recurse-submodules git@github.com:gumby0q/ukrainian_phd_thesis_latex_template.git
 ```
 
 **Варіант Б: Якщо вже склонували без submodules**
@@ -58,7 +58,7 @@ git submodule update --remote --merge
 
 **Option A: Clone with submodules**
 ```sh
-git clone --recurse-submodules git@github.com:gumby0q/phd_thesis_template.git
+git clone --recurse-submodules git@github.com:gumby0q/ukrainian_phd_thesis_latex_template.git
 ```
 
 **Option B: If already cloned without submodules**
