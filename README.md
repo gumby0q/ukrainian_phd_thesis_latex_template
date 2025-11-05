@@ -20,7 +20,7 @@
 
 ## Подяка (Acknowledgements)
 
-Цей шаблон базується на роботі **Олександра Барановського**, який створив оригінальні стилі для оформлення українських дисертаційних робіт. Оригінальні файли доступні за посиланням:
+Особлива подяка **Олександру Барановському**, який створив оригінальні стилі для оформлення українських дисертаційних робіт. Оригінальні файли доступні за посиланням:
 
 https://www.imath.kiev.ua/~baranovskyi/tex/vakthesis/support/mon2017dev/
 
@@ -28,7 +28,7 @@ https://www.imath.kiev.ua/~baranovskyi/tex/vakthesis/support/mon2017dev/
 
 ---
 
-*This template is based on the work of **Oleksandr Baranovsky**, who created the original styles for Ukrainian thesis formatting. The current version includes adaptations (~2023 edition) for UTF-8 encoding, `lualatex`, and `biber` compatibility.*
+*Special thanks to **Oleksandr Baranovsky**, who created the original styles for Ukrainian thesis formatting. The current version includes adaptations (~2023 edition) for UTF-8 encoding, `lualatex`, and `biber` compatibility.*
 
 ## Швидкий старт (Quick Start)
 
