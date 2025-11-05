@@ -32,6 +32,46 @@ https://www.imath.kiev.ua/~baranovskyi/tex/vakthesis/support/mon2017dev/
 
 ## Швидкий старт (Quick Start)
 
+### 0. Клонування репозиторію (Clone Repository)
+
+Цей проект використовує git submodule для стилів `vakthesis`. При клонуванні використовуйте один з варіантів:
+
+**Варіант А: Клонування з submodules одразу**
+```sh
+git clone --recurse-submodules git@github.com:gumby0q/phd_thesis_template.git
+```
+
+**Варіант Б: Якщо вже склонували без submodules**
+```sh
+git submodule init
+git submodule update
+```
+
+**Варіант В: Оновлення submodule до останньої версії**
+```sh
+git submodule update --remote --merge
+```
+
+---
+
+*This project uses git submodule for `vakthesis` styles. When cloning, use one of the following:*
+
+**Option A: Clone with submodules**
+```sh
+git clone --recurse-submodules git@github.com:gumby0q/phd_thesis_template.git
+```
+
+**Option B: If already cloned without submodules**
+```sh
+git submodule init
+git submodule update
+```
+
+**Option C: Update submodule to latest version**
+```sh
+git submodule update --remote --merge
+```
+
 ### 1. Збірка Docker образу (Build Docker Image)
 
 Створіть Docker образ з усіма необхідними залежностями:

@@ -1,0 +1,4 @@
+[submodule "vakthesis"]
+	path = vakthesis
+	url = git@github.com:gumby0q/vakthesis.git
+	branch = feature/lualatex_integration
